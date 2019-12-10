@@ -15,7 +15,9 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit {
     constructor(private analytics: AnalyticsService, private http: HttpClient) {
         // call api awake
-        this.http.get(environment.apiUrl).subscribe();
+        this.http.get(environment.apiUrl).subscribe(() => {
+            console.log('aaaaaaaa');
+        });
     }
 
     ngOnInit(): void {
